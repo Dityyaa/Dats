@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manajemen Data Mahasiswa</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black text-white font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-purple-800 shadow-md p-6 text-center">
+    <h1 class="text-4xl font-extrabold tracking-wide text-white">📚 Manajemen Data Mahasiswa</h1>
+    <p class="text-sm text-purple-200 mt-1">Sistem Pendataan Mahasiswa Universitas</p>
+  </header>
+
+  <!-- Container -->
+  <main class="max-w-6xl mx-auto mt-8 p-4">
+
+    <!-- Form Tambah/Edit Mahasiswa -->
+    <form id="formMahasiswa" class="hidden flex flex-col gap-4 mb-8 bg-black border border-purple-700 p-6 rounded-lg">
+      <h2 class="text-xl font-semibold text-purple-400 mb-2">📝 Form Mahasiswa</h2>
+
+      <input type="hidden" id="editIndex">
+
+      <div>
+        <label for="nama" class="block text-sm text-purple-300 mb-1">Nama Mahasiswa:</label>
+        <input type="text" id="nama" placeholder="Masukkan nama mahasiswa..."
+          class="bg-black border border-purple-700 p-2 rounded w-full text-white focus:ring-2 focus:ring-purple-500 outline-none" required>
+      </div>
+
+      <div>
+        <label for="nim" class="block text-sm text-purple-300 mb-1">NIM:</label>
+        <input type="text" id="nim" placeholder="Masukkan NIM mahasiswa..."
+          class="bg-black border border-purple-700 p-2 rounded w-full text-white focus:ring-2 focus:ring-purple-500 outline-none" required>
+      </div>
+
+      <div>
+        <label for="prodi" class="block text-sm text-purple-300 mb-1">Program Studi:</label>
+        <input type="text" id="prodi" placeholder="Masukkan program studi..."
+          class="bg-black border border-purple-700 p-2 rounded w-full text-white focus:ring-2 focus:ring-purple-500 outline-none" required>
+      </div>
+
+      <div>
+        <label for="semester" class="block text-sm text-purple-300 mb-1">Semester:</label>
+        <input type="number" id="semester" min="1" max="14" placeholder="Masukkan semester..."
+          class="bg-black border border-purple-700 p-2 rounded w-full text-white focus:ring-2 focus:ring-purple-500 outline-none" required>
+      </div>
+
+      <div class="border-t border-purple-700 pt-4 mt-2">
+        <h3 class="font-semibold text-purple-300 mb-2">🖼️ Foto Mahasiswa</h3>
+        <input type="file" id="fileFoto" accept="image/*"
+          class="bg-black border border-purple-700 p-2 rounded w-full text-white focus:ring-2 focus:ring-purple-500 outline-none">
+        <p class="text-xs text-purple-400 mt-1">Pilih file foto jika ingin menambahkan atau mengganti.</p>
+      </div>
+
+      <div class="flex gap-3 mt-4">
+        <button type="submit"
+          class="bg-purple-700 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition shadow">
+          Simpan Mahasiswa
+        </button>
+        <button type="button" id="btnCancelEdit"
+          class="hidden bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition shadow">
+          Batal Edit
+        </button>
+      </div>
+    </form>
+
+    <!-- Grid Mahasiswa -->
+    <section id="gridMahasiswa" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></section>
+  </main>
+
+  <footer class="text-center text-purple-300 mt-10 mb-6">
+    <p>© 2025 Sistem Manajemen Mahasiswa | Dibuat oleh Dityaa</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
